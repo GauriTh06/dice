@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice-roller</title>
+    
+</head>
+<style>
+    body{
+        background-image: url("bg.webp");
+        background-size: cover;
+    }
+    .ludo-board{
+        height:450px;
+        margin:40px 80px;
+    }
+    .die-container{
+        border:3px solid black;
+        border-radius: 10px;
+        width: 150px;
+        margin-left: 230px;
+    }
+    .dice-img{
+        display: block;
+        width: 110px;
+        padding: 10px;
+        margin: 5px 8px;
+    }
+    .btn{
+        background-color: #e6005c;
+        color: white;
+        font-size: 20px;
+        border:none;
+        border-radius: 3px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    
+</style>
+<body>
+ <div>  
+<img src="ludo-board.jpg" class="ludo-board">
+<div class="die-container">
+    <img src="6-dice.png" class="dice-img" id="dice">
+    <button type="button" class="btn" onclick="dieroller()">Roll the Dice</button>
+</div>
+</div>
+
+ <script>
+    const diceImg = document.getElementById("dice");
+    function  dieroller(){
+    const min = 1;
+    const max = 6;
+    const randomNumber = Math.round(Math.random()*(max-min))+min;
+    if (randomNumber === 1) {
+                diceImg.src = "1-dice.png";
+            }
+            else if (randomNumber === 2) {
+                diceImg.src = "2-dice.png";
+            }
+            else if (randomNumber === 3) {
+                diceImg.src = "3-dice.png";
+            }
+            else if (randomNumber === 4) {
+                diceImg.src = "4-dice.png";
+            }
+            else if (randomNumber === 5) {
+                diceImg.src = "5-dice.png";
+            }
+            else {
+                diceImg.src = "6-dice.png";
+            }
+
+    }
+    
+
+    
+ </script>   
+</body>
+</html>
